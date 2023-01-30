@@ -29,7 +29,7 @@ struct ContentView: View {
             Spacer()
             
             HStack{
-                Button("<"){
+                Button{
                     year -= 1
                     
                     imageNum -= 1
@@ -37,17 +37,21 @@ struct ContentView: View {
                         imageNum = 11
                         year = 2031
                     }
+                } label: {
+                    Image(systemName: "chevron.left")
                 }
                 
                 Spacer()
                 
-                Button(">"){
+                Button{
                     year += 1
                     imageNum += 1
                     if imageNum > 11{
                         imageNum = 0
                         year = 2020
                     }
+                }label: {
+                    Image(systemName: "chevron.right")
                 }
             }
             .buttonStyle(.borderedProminent)
